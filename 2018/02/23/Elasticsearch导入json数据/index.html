@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/02/23/Elasticsearch导入json数据/index.html">
 <meta property="og:site_name" content="coder myparamita">
 <meta property="og:description" content="导入json数据到es 每条记录必须有一条对应的index声明。json文件应符合Bulk API要求 json文件中每条数据前需包含index信息（index/type/id…）  1curl -H &apos;Content-Type: application/x-ndjson&apos;  -s -XPOST localhost:9200/_bulk --data-binary @accounts.json 1">
-<meta property="og:updated_time" content="2018-02-23T14:48:22.582Z">
+<meta property="og:updated_time" content="2018-02-23T14:50:32.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elasticsearch导入json数据">
 <meta name="twitter:description" content="导入json数据到es 每条记录必须有一条对应的index声明。json文件应符合Bulk API要求 json文件中每条数据前需包含index信息（index/type/id…）  1curl -H &apos;Content-Type: application/x-ndjson&apos;  -s -XPOST localhost:9200/_bulk --data-binary @accounts.json 1">
@@ -162,6 +162,7 @@
 </ul>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -H 'Content-Type: application/x-ndjson'  -s -XPOST localhost:9200/_bulk --data-binary @accounts.json</span><br></pre></td></tr></table></figure>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"index"</span>:&#123;<span class="attr">"_index"</span>:<span class="string">"index2"</span>,<span class="attr">"_type"</span>:<span class="string">"type2"</span>,<span class="attr">"_id"</span>:<span class="number">0</span>&#125;&#125;</span><br><span class="line">&#123;<span class="attr">"age"</span>:<span class="number">10</span>,<span class="attr">"name"</span>:<span class="string">"jim"</span>&#125;</span><br><span class="line">    &#123;<span class="attr">"index"</span>:&#123;<span class="attr">"_index"</span>:<span class="string">"index2"</span>,<span class="attr">"_type"</span>:<span class="string">"type2"</span>,<span class="attr">"_id"</span>:<span class="number">1</span>&#125;&#125;</span><br><span class="line">&#123;<span class="attr">"age"</span>:<span class="number">16</span>,<span class="attr">"name"</span>:<span class="string">"tom"</span>&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <ul>
 <li>若导入文件中为同一个index（/index/type），则可在url中声明默认index（/index/type），则json文件中无须声明index和type，同时，支持部分记录显示声明index和type。</li>
 </ul>
